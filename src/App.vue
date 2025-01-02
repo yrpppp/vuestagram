@@ -2,6 +2,8 @@
   <div class="header">
     <ul class="header-button-left">
       <li>Cancel</li>
+      <li>{{ $store.state.name }}</li>
+      <button @click="$store.commit('이름변경')">버튼</button>
     </ul>
     <ul class="header-button-right">
       <li v-if="step==1" @click="step=2">Next</li>
