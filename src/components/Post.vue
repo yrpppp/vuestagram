@@ -4,10 +4,12 @@
       <div :class="`${postData.filter}`" class="profile" :style="{backgroundImage: `url(${postData.userImage})`}"></div>
       <span class="profile-name">{{postData.name}}</span>
     </div>
-    <div :class="`${postData.filter}`" class="post-body" :style="{ backgroundImage :`url(${postData.postImage})` }"></div>
+    <div :class="`${postData.filter}`" @click="$store.commit('좋아요')" class="post-body" :style="{ backgroundImage :`url(${postData.postImage})` }"></div>
     <div class="post-content">
       <!-- <p>{{ postData }}</p> -->
-      <p>{{ postData.likes }} Likes</p>
+      <!-- <p>{{ postData.likes }} Likes</p> -->
+      <p>{{ $store.state.likes }} Likes</p>
+
       <p><strong></strong> {{postData.content}}</p>
       <p class="date">{{postData.date}}</p>
     </div>

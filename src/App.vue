@@ -2,8 +2,10 @@
   <div class="header">
     <ul class="header-button-left">
       <li>Cancel</li>
-      <li>{{ $store.state.name }}</li>
+      <!-- <li>{{ $store.state.name }}</li>
       <button @click="$store.commit('이름변경')">버튼</button>
+      <li>{{ $store.state.age }}</li>
+      <button @click="$store.commit('나이증가')">버튼</button> -->
     </ul>
     <ul class="header-button-right">
       <li v-if="step==1" @click="step=2">Next</li>
@@ -13,7 +15,8 @@
   </div>
 
   <Container @write="작성한글=$event" :postData="postData" :step="step" :imgUrl="imgUrl" :filter="filter"/>
-<button @click="more">더보기</button>
+  <p>{{  $store.state.more }}</p>
+  <button @click="$store.dispatch('getData')">더보기</button>
 
   <div class="footer">
     <ul class="footer-button-plus">
